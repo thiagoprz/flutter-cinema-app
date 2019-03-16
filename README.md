@@ -6,5 +6,11 @@ The main goal is to understand and apply flutter tools on a simple application w
 
 The Movie Database API: https://www.themoviedb.org/documentation/api
 
+## Building
+1) Create a configuration file by copying file lib/src/config/api.dart.example into lib/src/config/api.dart path;
+2) Set your TMDB API Key into "TMDB_API_KEY" constant;
+3) Build and publish
+
 
 Currently in development.
+
