@@ -3,6 +3,8 @@ import '../models/item_model.dart';
 import '../blocs/movies_bloc.dart';
 import 'movie_detail.dart';
 
+import 'package:cached_network_image/cached_network_image.dart';
+
 class MovieList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -42,9 +44,9 @@ class MovieListState extends State<MovieList> {
         new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            child: Image.network(
-              'https://image.tmdb.org/t/p/w185${snapshot.data
-                  .results[index].poster_path}',
+            child: Image(
+              image: new CachedNetworkImageProvider('https://image.tmdb.org/t/p/w185${snapshot.data
+                  .results[index].poster_path}'),
               fit: BoxFit.cover,
             ),
             onTap: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class BannerImage extends StatelessWidget {
   BannerImage(this.imageUrl);
@@ -10,8 +11,8 @@ class BannerImage extends StatelessWidget {
 
     return ClipPath(
       clipper: ArcClipper(),
-      child: Image.network(
-        'https://image.tmdb.org/t/p/w500' + imageUrl,
+      child: new Image(
+        image: new CachedNetworkImageProvider("https://image.tmdb.org/t/p/w500" + imageUrl),
         width: screenWidth,
         height: 230.0,
         fit: BoxFit.cover,
